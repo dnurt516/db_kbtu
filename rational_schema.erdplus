@@ -1,0 +1,1006 @@
+{
+  "diagramType": 2,
+  "data": {
+    "nodes": [
+      {
+        "id": "810224ca-2107-46ec-a0e0-e5134bc2de07",
+        "type": "Table",
+        "position": {
+          "x": 431.9585237323188,
+          "y": 456.35325152342506
+        },
+        "data": {
+          "label": "Student",
+          "isConnectable": false,
+          "columns": [
+            {
+              "id": "c7dba245-0511-463e-a6e4-33ac07008822",
+              "name": "student_id",
+              "type": "INT",
+              "position": 0,
+              "isUnique": true,
+              "isPrimaryKey": true,
+              "isOptional": false
+            },
+            {
+              "id": "9d23270a-2249-4655-876d-f3ccad7fe733",
+              "name": "f_name",
+              "type": "VARCHAR(n)",
+              "position": 0,
+              "isUnique": false,
+              "isPrimaryKey": false,
+              "size": "50"
+            },
+            {
+              "id": "956cd79c-4f57-4084-b7e9-b5a24b7e60ff",
+              "name": "l_name",
+              "type": "VARCHAR(n)",
+              "position": 0,
+              "isUnique": false,
+              "isPrimaryKey": false
+            },
+            {
+              "id": "b5adcb4d-315a-4330-bebf-fd2ed29018b7",
+              "name": "email",
+              "type": "VARCHAR(n)",
+              "position": 0,
+              "isUnique": true,
+              "isPrimaryKey": false
+            }
+          ],
+          "numberOfGroups": 0,
+          "isSelected": false,
+          "isFactTable": false
+        },
+        "measured": {
+          "width": 240,
+          "height": 126
+        },
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "id": "413291d1-0b90-45e7-b652-0d19161bc13c",
+        "type": "Table",
+        "position": {
+          "x": 1225,
+          "y": 487
+        },
+        "data": {
+          "label": "Faculty",
+          "isConnectable": false,
+          "columns": [
+            {
+              "id": "fd413a1f-8472-4166-adc0-bc308972e32f",
+              "name": "faculty_id",
+              "type": "INT",
+              "position": 0,
+              "isUnique": true,
+              "isPrimaryKey": true,
+              "isOptional": false
+            },
+            {
+              "id": "90903ab4-83e8-4c20-936c-e6c88c59228f",
+              "name": "f_name",
+              "type": "VARCHAR(n)",
+              "position": 0,
+              "isUnique": false,
+              "isPrimaryKey": false
+            },
+            {
+              "id": "06cd06fa-49f5-4795-b432-1ad9cc76e4d2",
+              "name": "l_name",
+              "type": "VARCHAR(n)",
+              "position": 0,
+              "isUnique": false,
+              "isPrimaryKey": false
+            },
+            {
+              "id": "e1d0d447-a4d9-48d0-8ff4-9deb6c309e53",
+              "name": "email",
+              "type": "VARCHAR(n)",
+              "position": 0,
+              "isUnique": true,
+              "isPrimaryKey": false
+            }
+          ],
+          "numberOfGroups": 0,
+          "isSelected": false
+        },
+        "measured": {
+          "width": 240,
+          "height": 126
+        },
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "id": "b0928739-037b-4591-9eef-66686bc4270d",
+        "type": "Table",
+        "position": {
+          "x": 855.125,
+          "y": 479
+        },
+        "data": {
+          "label": "Club",
+          "isConnectable": false,
+          "columns": [
+            {
+              "id": "58d21533-70ec-43a0-83d5-ddc16ac64194",
+              "name": "club_id",
+              "type": "INT",
+              "position": 0,
+              "isUnique": true,
+              "isPrimaryKey": true,
+              "isOptional": false
+            },
+            {
+              "id": "3fa42464-4c3e-4661-b097-7c369c7a6a0a",
+              "name": "name",
+              "type": "VARCHAR(n)",
+              "position": 0,
+              "isUnique": true,
+              "isPrimaryKey": false
+            },
+            {
+              "id": "fk_fceaf1f1-caac-48e3-9d04-1b2202aa63d0",
+              "name": "fk_Faculty",
+              "type": "None",
+              "isForeignKey": true,
+              "foreignKeyProps": {
+                "foreignKeyGroupId": "8915586b-41fa-46c0-8a07-7b95eaa7cc6d",
+                "sourceTableId": "413291d1-0b90-45e7-b652-0d19161bc13c",
+                "columns": [
+                  {
+                    "id": "fk_fd413a1f-8472-4166-adc0-bc308972e32f",
+                    "name": "faculty_id",
+                    "type": "INT"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "fk_c53407eb-ab94-4f2c-9bee-ae8044b29beb",
+              "name": "fk_Event",
+              "type": "None",
+              "isForeignKey": true,
+              "foreignKeyProps": {
+                "foreignKeyGroupId": "1b885f84-dc3b-42b8-9163-16216c5f453a",
+                "sourceTableId": "59360611-82f8-4e63-b18c-9b840ac361bd",
+                "columns": [
+                  {
+                    "id": "fk_838f8b44-f5dc-4764-937e-cbf94b232a3f",
+                    "name": "event_id",
+                    "type": "INT"
+                  }
+                ]
+              }
+            }
+          ],
+          "numberOfGroups": 0,
+          "isSelected": false
+        },
+        "measured": {
+          "width": 240,
+          "height": 127
+        },
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "id": "e878ed88-4fb4-48b6-8c37-28c93ad88112",
+        "type": "Table",
+        "position": {
+          "x": 432.72196835690886,
+          "y": 620.1521963437799
+        },
+        "data": {
+          "label": "Membership",
+          "isConnectable": false,
+          "columns": [
+            {
+              "id": "bda8abd1-1d04-4080-beec-be94b6938655",
+              "name": "membership_id",
+              "type": "INT",
+              "position": 0,
+              "isPrimaryKey": true,
+              "isOptional": false
+            },
+            {
+              "id": "caa67639-d68d-45f1-8de6-a89ddd6a34a0",
+              "name": "join_date",
+              "type": "DATE",
+              "position": 0,
+              "isPrimaryKey": false
+            },
+            {
+              "id": "fk_6aa069d7-64b3-4aab-99bf-3ab8c2a49936",
+              "name": "fk_Student",
+              "type": "None",
+              "isForeignKey": true,
+              "foreignKeyProps": {
+                "foreignKeyGroupId": "52dd424b-6219-4b69-8e3f-7361460b7755",
+                "sourceTableId": "810224ca-2107-46ec-a0e0-e5134bc2de07",
+                "columns": [
+                  {
+                    "id": "fk_c7dba245-0511-463e-a6e4-33ac07008822",
+                    "name": "student_id",
+                    "type": "INT"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "fk_ecd2c36e-d6f6-43e0-ba2a-200ff520b85d",
+              "name": "fk_Club",
+              "type": "None",
+              "isForeignKey": true,
+              "foreignKeyProps": {
+                "foreignKeyGroupId": "cb3dd560-14be-4ca7-a42b-c494bdd74e9d",
+                "sourceTableId": "b0928739-037b-4591-9eef-66686bc4270d",
+                "columns": [
+                  {
+                    "id": "fk_58d21533-70ec-43a0-83d5-ddc16ac64194",
+                    "name": "club_id",
+                    "type": "INT"
+                  }
+                ]
+              }
+            }
+          ],
+          "numberOfGroups": 0,
+          "isSelected": false
+        },
+        "measured": {
+          "width": 240,
+          "height": 127
+        },
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "id": "dffaa51b-feda-457e-be89-691a9c964de6",
+        "type": "Table",
+        "position": {
+          "x": 853.2065211980162,
+          "y": 238.3864068045672
+        },
+        "data": {
+          "label": "ClubOfficer",
+          "isConnectable": false,
+          "columns": [
+            {
+              "id": "3a4b7a0d-009b-420d-abff-5fddab9518be",
+              "name": "officer_id",
+              "type": "INT",
+              "position": 0,
+              "isPrimaryKey": true,
+              "isOptional": false
+            },
+            {
+              "id": "b7bca613-54bd-4bb9-af38-73de9b926a04",
+              "name": "start_date",
+              "type": "DATE",
+              "position": 0,
+              "isPrimaryKey": false
+            },
+            {
+              "id": "c0ded839-d7c3-4d27-bd76-162f71b34cef",
+              "name": "end_date",
+              "type": "DATE",
+              "position": 0,
+              "isPrimaryKey": false
+            },
+            {
+              "id": "fk_51b42757-65b0-431f-97a6-069ed6e62fd3",
+              "name": "fk_Club",
+              "type": "None",
+              "isForeignKey": true,
+              "foreignKeyProps": {
+                "foreignKeyGroupId": "9a9f1e2a-7b0a-4a7b-99bb-b2737bc6ebe7",
+                "sourceTableId": "b0928739-037b-4591-9eef-66686bc4270d",
+                "columns": [
+                  {
+                    "id": "fk_58d21533-70ec-43a0-83d5-ddc16ac64194",
+                    "name": "club_id",
+                    "type": "INT"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "fk_b97dbb9e-15a7-44c0-88ff-d9b34181159b",
+              "name": "fk_OfficerRole",
+              "type": "None",
+              "isForeignKey": true,
+              "foreignKeyProps": {
+                "foreignKeyGroupId": "e14035e9-9656-49af-9344-a8d832a3ac21",
+                "sourceTableId": "02520bec-b907-444f-b2c9-1b8a5e4c4a14",
+                "columns": [
+                  {
+                    "id": "fk_9310426b-4511-4a6a-9a21-25f73edecff4",
+                    "name": "role_id",
+                    "type": "INT"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "fk_12c37082-73bc-4ed2-a96d-3b89e6dbea1e",
+              "name": "fk_Student",
+              "type": "None",
+              "isForeignKey": true,
+              "foreignKeyProps": {
+                "foreignKeyGroupId": "660ed3af-d4af-4bbf-9ce7-7722518f05bb",
+                "sourceTableId": "810224ca-2107-46ec-a0e0-e5134bc2de07",
+                "columns": [
+                  {
+                    "id": "fk_c7dba245-0511-463e-a6e4-33ac07008822",
+                    "name": "student_id",
+                    "type": "INT"
+                  }
+                ]
+              }
+            }
+          ],
+          "numberOfGroups": 0,
+          "isSelected": false
+        },
+        "measured": {
+          "width": 240,
+          "height": 177
+        },
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "id": "02520bec-b907-444f-b2c9-1b8a5e4c4a14",
+        "type": "Table",
+        "position": {
+          "x": 428.0089416184092,
+          "y": 304.14621546828425
+        },
+        "data": {
+          "label": "OfficerRole",
+          "isConnectable": false,
+          "columns": [
+            {
+              "id": "9310426b-4511-4a6a-9a21-25f73edecff4",
+              "name": "role_id",
+              "type": "INT",
+              "position": 0,
+              "isPrimaryKey": true,
+              "isOptional": false
+            },
+            {
+              "id": "4b25426b-acf6-4ed6-9c04-6fc039cd3e0c",
+              "name": "name",
+              "type": "VARCHAR(n)",
+              "position": 0,
+              "isPrimaryKey": false
+            }
+          ],
+          "numberOfGroups": 0,
+          "isSelected": false
+        },
+        "measured": {
+          "width": 240,
+          "height": 76
+        },
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "id": "59360611-82f8-4e63-b18c-9b840ac361bd",
+        "type": "Table",
+        "position": {
+          "x": 1231.345784240332,
+          "y": 687.3606398252521
+        },
+        "data": {
+          "label": "Event",
+          "isConnectable": false,
+          "columns": [
+            {
+              "id": "838f8b44-f5dc-4764-937e-cbf94b232a3f",
+              "name": "event_id",
+              "type": "INT",
+              "position": 0,
+              "isPrimaryKey": true,
+              "isOptional": false
+            },
+            {
+              "id": "18c996c4-bba8-4549-a865-341dd5d9dea6",
+              "name": "club_id",
+              "type": "INT",
+              "position": 0,
+              "isPrimaryKey": false
+            },
+            {
+              "id": "d33c7671-c9cb-4bd0-bfe7-87798bd4ecd2",
+              "name": "title",
+              "type": "VARCHAR(n)",
+              "position": 0,
+              "isPrimaryKey": false
+            },
+            {
+              "id": "16831a68-367f-4cee-a7a0-166b517ad084",
+              "name": "description",
+              "type": "VARCHAR(n)",
+              "position": 0,
+              "isPrimaryKey": false
+            },
+            {
+              "id": "a592cb54-e073-4e86-bfcb-e55c2ee1dc57",
+              "name": "start_datetime",
+              "type": "INT",
+              "position": 0,
+              "isPrimaryKey": false
+            },
+            {
+              "id": "c44b863b-e2a9-46e5-8e3b-7a4e40297857",
+              "name": "end_datetime",
+              "type": "INT",
+              "position": 0,
+              "isPrimaryKey": false
+            }
+          ],
+          "numberOfGroups": 0,
+          "isSelected": false
+        },
+        "measured": {
+          "width": 240,
+          "height": 176
+        },
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "id": "165b43f8-8fbb-43c8-854f-c1e2bb175d8e",
+        "type": "Table",
+        "position": {
+          "x": 847.7613213740112,
+          "y": 799.8556207730737
+        },
+        "data": {
+          "label": "Reservation",
+          "isConnectable": false,
+          "columns": [
+            {
+              "id": "a1e402f8-dbf2-453c-b6ab-0ea2ed85cac9",
+              "name": "reservation_id",
+              "type": "INT",
+              "position": 0,
+              "isUnique": false,
+              "isPrimaryKey": true,
+              "isOptional": false
+            },
+            {
+              "id": "e9012370-4508-47c8-9808-48a0448e036f",
+              "name": "room_id",
+              "type": "INT",
+              "position": 0,
+              "isUnique": false,
+              "isPrimaryKey": false
+            },
+            {
+              "id": "fk_eb3c67aa-64b5-4d16-a5ea-9e5def22e379",
+              "name": "fk_Event",
+              "type": "None",
+              "isForeignKey": true,
+              "foreignKeyProps": {
+                "foreignKeyGroupId": "fb3fc7b8-aeec-4f62-a018-7c1125e06d0f",
+                "sourceTableId": "59360611-82f8-4e63-b18c-9b840ac361bd",
+                "columns": [
+                  {
+                    "id": "fk_838f8b44-f5dc-4764-937e-cbf94b232a3f",
+                    "name": "event_id",
+                    "type": "INT"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "fk_0fcd1b29-564f-4f16-8149-46fe4204ca06",
+              "name": "fk_Room",
+              "type": "None",
+              "isForeignKey": true,
+              "foreignKeyProps": {
+                "foreignKeyGroupId": "f8f41c70-43d4-4bd4-bfe7-f76db5011f67",
+                "sourceTableId": "45900877-aedd-4612-9a82-4df2dfd8462f",
+                "columns": [
+                  {
+                    "id": "fk_44ec771f-c46f-43d5-9559-0419859e8c32",
+                    "name": "room_id",
+                    "type": "INT"
+                  }
+                ]
+              }
+            }
+          ],
+          "numberOfGroups": 0,
+          "isSelected": false
+        },
+        "measured": {
+          "width": 240,
+          "height": 127
+        },
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "id": "45900877-aedd-4612-9a82-4df2dfd8462f",
+        "type": "Table",
+        "position": {
+          "x": 432.5226427480226,
+          "y": 775.3654770829187
+        },
+        "data": {
+          "label": "Room",
+          "isConnectable": false,
+          "columns": [
+            {
+              "id": "44ec771f-c46f-43d5-9559-0419859e8c32",
+              "name": "room_id",
+              "type": "INT",
+              "position": 0,
+              "isPrimaryKey": true,
+              "isOptional": false
+            },
+            {
+              "id": "2e9ba66a-e092-49ba-9101-91c6647c631c",
+              "name": "room_number",
+              "type": "INT",
+              "position": 0,
+              "isPrimaryKey": false
+            },
+            {
+              "id": "66d0e3b8-a64d-4643-a00d-22ecfac7c546",
+              "name": "capacity",
+              "type": "INT",
+              "position": 0,
+              "isPrimaryKey": false
+            },
+            {
+              "id": "64e9dfa4-751d-4284-bbda-e7be4ef852ff",
+              "name": "building",
+              "type": "VARCHAR(n)",
+              "position": 0,
+              "isPrimaryKey": false
+            }
+          ],
+          "numberOfGroups": 0,
+          "isSelected": false
+        },
+        "measured": {
+          "width": 240,
+          "height": 126
+        },
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "id": "28d306e5-c5e6-488e-ad0d-9a24bddf7858",
+        "type": "Table",
+        "position": {
+          "x": 843.2770379405218,
+          "y": 674.4970698716672
+        },
+        "data": {
+          "label": "Attendance",
+          "isConnectable": false,
+          "columns": [
+            {
+              "id": "07f17c4f-b0ed-42be-a3fc-85912ccf8355",
+              "name": "status",
+              "type": "INT",
+              "position": 0
+            },
+            {
+              "id": "fk_4c19f66b-471f-4e50-94ed-5e25339593ba",
+              "name": "fk_Student",
+              "type": "None",
+              "isForeignKey": true,
+              "foreignKeyProps": {
+                "foreignKeyGroupId": "4ee07b1d-142f-48a8-8605-d70a0f1b79c1",
+                "sourceTableId": "810224ca-2107-46ec-a0e0-e5134bc2de07",
+                "columns": [
+                  {
+                    "id": "fk_c7dba245-0511-463e-a6e4-33ac07008822",
+                    "name": "student_id",
+                    "type": "INT"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "fk_20fcbb0f-4d16-401e-8cf3-bb72f6d674c3",
+              "name": "fk_Event",
+              "type": "None",
+              "isForeignKey": true,
+              "foreignKeyProps": {
+                "foreignKeyGroupId": "47090196-869f-4c12-9152-6dfb63cd6f58",
+                "sourceTableId": "59360611-82f8-4e63-b18c-9b840ac361bd",
+                "columns": [
+                  {
+                    "id": "fk_838f8b44-f5dc-4764-937e-cbf94b232a3f",
+                    "name": "event_id",
+                    "type": "INT"
+                  }
+                ]
+              }
+            }
+          ],
+          "numberOfGroups": 0,
+          "isSelected": false
+        },
+        "measured": {
+          "width": 240,
+          "height": 102
+        },
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "id": "292ffcb9-b2dc-45df-8b85-f3c3eed448cc",
+        "type": "Table",
+        "position": {
+          "x": 1175.9662563873478,
+          "y": 263.6850616648755
+        },
+        "data": {
+          "label": "Budget",
+          "isConnectable": false,
+          "columns": [
+            {
+              "id": "a06c750e-c19f-4c1f-8040-079e53bf2125",
+              "name": "budget_id",
+              "type": "INT",
+              "position": 0,
+              "isPrimaryKey": true,
+              "isOptional": false
+            },
+            {
+              "id": "c487531c-be7b-415c-a54a-dabf7e965bcc",
+              "name": "amount",
+              "type": "INT",
+              "position": 0,
+              "isPrimaryKey": false
+            },
+            {
+              "id": "b035a451-623e-411c-9f18-c1af5b3b04e8",
+              "name": "date",
+              "type": "INT",
+              "position": 0,
+              "isPrimaryKey": false
+            },
+            {
+              "id": "3e7036fd-c583-4ef0-8a5a-e2137b2a7538",
+              "name": "description",
+              "type": "VARCHAR(n)",
+              "position": 0,
+              "isPrimaryKey": false
+            },
+            {
+              "id": "fk_7d413087-8f0c-484a-b896-6bca3052f7e3",
+              "name": "fk_Club",
+              "type": "None",
+              "isForeignKey": true,
+              "foreignKeyProps": {
+                "foreignKeyGroupId": "367a84a3-5824-449a-916a-91efaaf15899",
+                "sourceTableId": "b0928739-037b-4591-9eef-66686bc4270d",
+                "columns": [
+                  {
+                    "id": "fk_58d21533-70ec-43a0-83d5-ddc16ac64194",
+                    "name": "club_id",
+                    "type": "INT"
+                  }
+                ]
+              }
+            }
+          ],
+          "numberOfGroups": 0,
+          "isSelected": true
+        },
+        "measured": {
+          "width": 240,
+          "height": 152
+        },
+        "selected": true,
+        "dragging": false
+      }
+    ],
+    "edges": [
+      {
+        "id": "810224ca-2107-46ec-a0e0-e5134bc2de07->e878ed88-4fb4-48b6-8c37-28c93ad88112_52dd424b-6219-4b69-8e3f-7361460b7755",
+        "type": "Relational",
+        "source": "810224ca-2107-46ec-a0e0-e5134bc2de07",
+        "targetHandle": "foreign-key-handle-52dd424b-6219-4b69-8e3f-7361460b7755",
+        "target": "e878ed88-4fb4-48b6-8c37-28c93ad88112",
+        "markerStart": {
+          "type": "arrow"
+        },
+        "data": {
+          "foreignKeyProps": {
+            "foreignKeyGroupId": "52dd424b-6219-4b69-8e3f-7361460b7755",
+            "sourceTableId": "810224ca-2107-46ec-a0e0-e5134bc2de07",
+            "columns": [
+              {
+                "id": "fk_c7dba245-0511-463e-a6e4-33ac07008822",
+                "name": "student_id",
+                "type": "INT"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "b0928739-037b-4591-9eef-66686bc4270d->e878ed88-4fb4-48b6-8c37-28c93ad88112_cb3dd560-14be-4ca7-a42b-c494bdd74e9d",
+        "type": "Relational",
+        "source": "b0928739-037b-4591-9eef-66686bc4270d",
+        "targetHandle": "foreign-key-handle-cb3dd560-14be-4ca7-a42b-c494bdd74e9d",
+        "target": "e878ed88-4fb4-48b6-8c37-28c93ad88112",
+        "markerStart": {
+          "type": "arrow"
+        },
+        "data": {
+          "foreignKeyProps": {
+            "foreignKeyGroupId": "cb3dd560-14be-4ca7-a42b-c494bdd74e9d",
+            "sourceTableId": "b0928739-037b-4591-9eef-66686bc4270d",
+            "columns": [
+              {
+                "id": "fk_58d21533-70ec-43a0-83d5-ddc16ac64194",
+                "name": "club_id",
+                "type": "INT"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "413291d1-0b90-45e7-b652-0d19161bc13c->b0928739-037b-4591-9eef-66686bc4270d_8915586b-41fa-46c0-8a07-7b95eaa7cc6d",
+        "type": "Relational",
+        "source": "413291d1-0b90-45e7-b652-0d19161bc13c",
+        "targetHandle": "foreign-key-handle-8915586b-41fa-46c0-8a07-7b95eaa7cc6d",
+        "target": "b0928739-037b-4591-9eef-66686bc4270d",
+        "markerStart": {
+          "type": "arrow"
+        },
+        "data": {
+          "foreignKeyProps": {
+            "foreignKeyGroupId": "8915586b-41fa-46c0-8a07-7b95eaa7cc6d",
+            "sourceTableId": "413291d1-0b90-45e7-b652-0d19161bc13c",
+            "columns": [
+              {
+                "id": "fk_fd413a1f-8472-4166-adc0-bc308972e32f",
+                "name": "faculty_id",
+                "type": "INT"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "59360611-82f8-4e63-b18c-9b840ac361bd->b0928739-037b-4591-9eef-66686bc4270d_1b885f84-dc3b-42b8-9163-16216c5f453a",
+        "type": "Relational",
+        "source": "59360611-82f8-4e63-b18c-9b840ac361bd",
+        "targetHandle": "foreign-key-handle-1b885f84-dc3b-42b8-9163-16216c5f453a",
+        "target": "b0928739-037b-4591-9eef-66686bc4270d",
+        "markerStart": {
+          "type": "arrow"
+        },
+        "data": {
+          "foreignKeyProps": {
+            "foreignKeyGroupId": "1b885f84-dc3b-42b8-9163-16216c5f453a",
+            "sourceTableId": "59360611-82f8-4e63-b18c-9b840ac361bd",
+            "columns": [
+              {
+                "id": "fk_838f8b44-f5dc-4764-937e-cbf94b232a3f",
+                "name": "event_id",
+                "type": "INT"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "59360611-82f8-4e63-b18c-9b840ac361bd->165b43f8-8fbb-43c8-854f-c1e2bb175d8e_fb3fc7b8-aeec-4f62-a018-7c1125e06d0f",
+        "type": "Relational",
+        "source": "59360611-82f8-4e63-b18c-9b840ac361bd",
+        "targetHandle": "foreign-key-handle-fb3fc7b8-aeec-4f62-a018-7c1125e06d0f",
+        "target": "165b43f8-8fbb-43c8-854f-c1e2bb175d8e",
+        "markerStart": {
+          "type": "arrow"
+        },
+        "data": {
+          "foreignKeyProps": {
+            "foreignKeyGroupId": "fb3fc7b8-aeec-4f62-a018-7c1125e06d0f",
+            "sourceTableId": "59360611-82f8-4e63-b18c-9b840ac361bd",
+            "columns": [
+              {
+                "id": "fk_838f8b44-f5dc-4764-937e-cbf94b232a3f",
+                "name": "event_id",
+                "type": "INT"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "45900877-aedd-4612-9a82-4df2dfd8462f->165b43f8-8fbb-43c8-854f-c1e2bb175d8e_f8f41c70-43d4-4bd4-bfe7-f76db5011f67",
+        "type": "Relational",
+        "source": "45900877-aedd-4612-9a82-4df2dfd8462f",
+        "targetHandle": "foreign-key-handle-f8f41c70-43d4-4bd4-bfe7-f76db5011f67",
+        "target": "165b43f8-8fbb-43c8-854f-c1e2bb175d8e",
+        "markerStart": {
+          "type": "arrow"
+        },
+        "data": {
+          "foreignKeyProps": {
+            "foreignKeyGroupId": "f8f41c70-43d4-4bd4-bfe7-f76db5011f67",
+            "sourceTableId": "45900877-aedd-4612-9a82-4df2dfd8462f",
+            "columns": [
+              {
+                "id": "fk_44ec771f-c46f-43d5-9559-0419859e8c32",
+                "name": "room_id",
+                "type": "INT"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "810224ca-2107-46ec-a0e0-e5134bc2de07->28d306e5-c5e6-488e-ad0d-9a24bddf7858_4ee07b1d-142f-48a8-8605-d70a0f1b79c1",
+        "type": "Relational",
+        "source": "810224ca-2107-46ec-a0e0-e5134bc2de07",
+        "targetHandle": "foreign-key-handle-4ee07b1d-142f-48a8-8605-d70a0f1b79c1",
+        "target": "28d306e5-c5e6-488e-ad0d-9a24bddf7858",
+        "markerStart": {
+          "type": "arrow"
+        },
+        "data": {
+          "foreignKeyProps": {
+            "foreignKeyGroupId": "4ee07b1d-142f-48a8-8605-d70a0f1b79c1",
+            "sourceTableId": "810224ca-2107-46ec-a0e0-e5134bc2de07",
+            "columns": [
+              {
+                "id": "fk_c7dba245-0511-463e-a6e4-33ac07008822",
+                "name": "student_id",
+                "type": "INT"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "59360611-82f8-4e63-b18c-9b840ac361bd->28d306e5-c5e6-488e-ad0d-9a24bddf7858_47090196-869f-4c12-9152-6dfb63cd6f58",
+        "type": "Relational",
+        "source": "59360611-82f8-4e63-b18c-9b840ac361bd",
+        "targetHandle": "foreign-key-handle-47090196-869f-4c12-9152-6dfb63cd6f58",
+        "target": "28d306e5-c5e6-488e-ad0d-9a24bddf7858",
+        "markerStart": {
+          "type": "arrow"
+        },
+        "data": {
+          "foreignKeyProps": {
+            "foreignKeyGroupId": "47090196-869f-4c12-9152-6dfb63cd6f58",
+            "sourceTableId": "59360611-82f8-4e63-b18c-9b840ac361bd",
+            "columns": [
+              {
+                "id": "fk_838f8b44-f5dc-4764-937e-cbf94b232a3f",
+                "name": "event_id",
+                "type": "INT"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "b0928739-037b-4591-9eef-66686bc4270d->dffaa51b-feda-457e-be89-691a9c964de6_9a9f1e2a-7b0a-4a7b-99bb-b2737bc6ebe7",
+        "type": "Relational",
+        "source": "b0928739-037b-4591-9eef-66686bc4270d",
+        "targetHandle": "foreign-key-handle-9a9f1e2a-7b0a-4a7b-99bb-b2737bc6ebe7",
+        "target": "dffaa51b-feda-457e-be89-691a9c964de6",
+        "markerStart": {
+          "type": "arrow"
+        },
+        "data": {
+          "foreignKeyProps": {
+            "foreignKeyGroupId": "9a9f1e2a-7b0a-4a7b-99bb-b2737bc6ebe7",
+            "sourceTableId": "b0928739-037b-4591-9eef-66686bc4270d",
+            "columns": [
+              {
+                "id": "fk_58d21533-70ec-43a0-83d5-ddc16ac64194",
+                "name": "club_id",
+                "type": "INT"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "02520bec-b907-444f-b2c9-1b8a5e4c4a14->dffaa51b-feda-457e-be89-691a9c964de6_e14035e9-9656-49af-9344-a8d832a3ac21",
+        "type": "Relational",
+        "source": "02520bec-b907-444f-b2c9-1b8a5e4c4a14",
+        "targetHandle": "foreign-key-handle-e14035e9-9656-49af-9344-a8d832a3ac21",
+        "target": "dffaa51b-feda-457e-be89-691a9c964de6",
+        "markerStart": {
+          "type": "arrow"
+        },
+        "data": {
+          "foreignKeyProps": {
+            "foreignKeyGroupId": "e14035e9-9656-49af-9344-a8d832a3ac21",
+            "sourceTableId": "02520bec-b907-444f-b2c9-1b8a5e4c4a14",
+            "columns": [
+              {
+                "id": "fk_9310426b-4511-4a6a-9a21-25f73edecff4",
+                "name": "role_id",
+                "type": "INT"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "b0928739-037b-4591-9eef-66686bc4270d->292ffcb9-b2dc-45df-8b85-f3c3eed448cc_367a84a3-5824-449a-916a-91efaaf15899",
+        "type": "Relational",
+        "source": "b0928739-037b-4591-9eef-66686bc4270d",
+        "targetHandle": "foreign-key-handle-367a84a3-5824-449a-916a-91efaaf15899",
+        "target": "292ffcb9-b2dc-45df-8b85-f3c3eed448cc",
+        "markerStart": {
+          "type": "arrow"
+        },
+        "data": {
+          "foreignKeyProps": {
+            "foreignKeyGroupId": "367a84a3-5824-449a-916a-91efaaf15899",
+            "sourceTableId": "b0928739-037b-4591-9eef-66686bc4270d",
+            "columns": [
+              {
+                "id": "fk_58d21533-70ec-43a0-83d5-ddc16ac64194",
+                "name": "club_id",
+                "type": "INT"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "810224ca-2107-46ec-a0e0-e5134bc2de07->dffaa51b-feda-457e-be89-691a9c964de6_660ed3af-d4af-4bbf-9ce7-7722518f05bb",
+        "type": "Relational",
+        "source": "810224ca-2107-46ec-a0e0-e5134bc2de07",
+        "targetHandle": "foreign-key-handle-660ed3af-d4af-4bbf-9ce7-7722518f05bb",
+        "target": "dffaa51b-feda-457e-be89-691a9c964de6",
+        "markerStart": {
+          "type": "arrow"
+        },
+        "data": {
+          "foreignKeyProps": {
+            "foreignKeyGroupId": "660ed3af-d4af-4bbf-9ce7-7722518f05bb",
+            "sourceTableId": "810224ca-2107-46ec-a0e0-e5134bc2de07",
+            "columns": [
+              {
+                "id": "fk_c7dba245-0511-463e-a6e4-33ac07008822",
+                "name": "student_id",
+                "type": "INT"
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "viewport": {
+      "x": -31.289883230865712,
+      "y": -163.0860789712301,
+      "zoom": 0.8705505632961245
+    }
+  },
+  "name": "dddddd",
+  "folder": {
+    "name": "Diagrams",
+    "folderType": 1,
+    "depth": 0,
+    "id": 45498
+  },
+  "id": 38082,
+  "updatedAtTimestamp": 1758082364
+}
