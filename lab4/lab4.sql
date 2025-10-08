@@ -275,3 +275,182 @@ SELECT
     LEAST(AVG(employees.salary), MAX(employees.salary)) AS salary_comparison_low
 FROM employees
 GROUP BY employees.department;
+
+
+
+
+
+
+
+-- TASK
+CREATE TABLE flights (
+  flight_id SERIAL PRIMARY KEY,
+  flight_number VARCHAR(20),
+  origin VARCHAR(100),
+  destination VARCHAR(100),
+  departure_time TIMESTAMP,
+  arrival_time TIMESTAMP,
+  aircraft_type VARCHAR(50),
+  status VARCHAR(20),
+  ticket_price NUMERIC(10,2)
+);
+
+CREATE TABLE passengers (
+  passenger_id SERIAL PRIMARY KEY,
+  passenger_name VARCHAR(50),
+  nationality VARCHAR(50),
+  passport_number VARCHAR(50),
+  frequent_flyer_status VARCHAR(20)
+);
+
+CREATE TABLE bookings (
+  booking_id SERIAL PRIMARY KEY,
+  passenger_id INTEGER REFERENCES passengers(passenger_id),
+  flight_id INTEGER REFERENCES flights(flight_id),
+  booking_date DATE,
+  seat_number VARCHAR(10),
+  baggage_weight NUMERIC(5,2)
+);
+
+SELECT flight_id, LOWER(flight_number) 
+    AS flight_number_lower, 
+        origin || ' -> ' || destination AS route, 
+        aircraft_type || ' Aircraft' AS aircraft_type_label, 
+        departure_time, 
+        arrival_time,
+        status, 
+        ticket_price 
+    FROM flights ORDER BY flight_id;
+
+SELECT 
+    flight_id,
+    flight_number,
+    origin,
+    destination,
+    departure_time,
+    arrival_time 
+    FROM flights 
+    WHERE destination LIKE 'New%' OR destination LIKE 'Los%' 
+    ORDER BY destination, flight_id;
+
+SELECT 
+    passenger_id,
+    passenger_name,
+    frequent_flyer_status,
+    CASE 
+        WHEN frequent_flyer_status IN ('Gold','Platinum') THEN 'Elite Member'
+        WHEN frequent_flyer_status = 'Silver' THEN 'Regular Member' 
+        ELSE 'Standard' END AS passenger_category 
+    FROM passengers ORDER BY passenger_id;
+
+SELECT 
+    flight_id,
+    flight_number, 
+    departure_time, 
+    arrival_time, 
+    EXTRACT(EPOCH FROM (arrival_time - departure_time)) / 3600.0 AS duration_hours 
+    FROM flights
+    WHERE arrival_time IS NOT NULL AND departure_time IS NOT NULL ORDER BY flight_id;
+
+SELECT 
+    booking_id,
+    passenger_id,
+    flight_id,
+    booking_date,
+    seat_number,
+    baggage_weight 
+    FROM bookings 
+    WHERE booking_date >= (current_date - INTERVAL '30 days') 
+    ORDER BY booking_date DESC;
+
+SELECT 
+    flight_id,
+    flight_number,
+    departure_time,
+    EXTRACT(HOUR FROM departure_time) AS depart_hour 
+    FROM flights 
+    WHERE EXTRACT(HOUR FROM departure_time) < 12 
+    ORDER BY departure_time;
+
+SELECT 
+    SUM(baggage_weight) AS total_baggage_weight_over_20 
+    FROM bookings 
+    WHERE baggage_weight > 20;
+
+SELECT DISTINCT 
+    p.passenger_id,
+    p.passenger_name,
+    p.frequent_flyer_status,
+    b.baggage_weight,
+    b.flight_id 
+    FROM passengers p 
+    JOIN bookings b ON p.passenger_id = b.passenger_id 
+    WHERE b.baggage_weight BETWEEN 15 AND 25 
+        AND p.frequent_flyer_status IS NOT NULL 
+    ORDER BY p.passenger_id;
+
+SELECT 
+    ROUND(ticket_price*1.12, 2) AS ticket_price_with_fee
+    FROM flights;
+
+SELECT 
+    flight_id,
+    origin,
+    destination,
+    ticket_price
+    WHERE ticket_price < 300 
+        OR status = 'Delayed';
+
+SELECT flight_id,
+    flight_number,
+    ticket_price,
+    ROUND(ticket_price * 1.12, 2) AS price_with_service_fee
+    FROM flights 
+    ORDER BY flight_id;
+
+SELECT 
+    flight_id,
+    flight_number,
+    origin,
+    destination,
+    ticket_price,
+    status 
+    FROM flights 
+    WHERE ticket_price < 300 
+        OR status = 'Delayed' 
+    ORDER BY status, ticket_price;
+
+SELECT 
+    f.flight_id,
+    f.flight_number,
+    f.origin,
+    f.destination,
+    COUNT(b.booking_id) AS passenger_count 
+    FROM flights f JOIN bookings b ON f.flight_id = b.flight_id
+    GROUP BY f.flight_id, f.flight_number, f.origin, f.destination 
+    ORDER BY passenger_count DESC, f.flight_id;
+
+SELECT 
+    p.nationality,
+    ROUND(AVG(b.baggage_weight),
+    2) AS avg_baggage_weight,
+    COUNT(b.booking_id) AS bookings_count
+    FROM passengers p JOIN bookings b ON p.passenger_id = b.passenger_id 
+    GROUP BY p.nationality HAVING AVG(b.baggage_weight) > 18 
+    ORDER BY avg_baggage_weight DESC;
+
+SELECT 
+    aircraft_type,
+    MAX(ticket_price) AS max_ticket_price,
+    MIN(ticket_price) AS min_ticket_price,
+    COUNT(flight_id) AS flights_count
+    FROM flights 
+    GROUP BY aircraft_type ORDER BY aircraft_type;
+
+SELECT 
+    f.destination,
+    COUNT(b.booking_id) AS tickets_sold,
+    ROUND(SUM(f.ticket_price), 2) AS total_revenue
+    FROM bookings b JOIN flights f ON b.flight_id = f.flight_id 
+    GROUP BY f.destination 
+    ORDER BY total_revenue DESC;
